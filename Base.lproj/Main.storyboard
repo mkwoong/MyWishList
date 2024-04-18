@@ -86,6 +86,12 @@
                             <constraint firstItem="H1v-MG-cST" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="qvd-i2-qzP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="productDescription" destination="d66-be-VUP" id="cmT-aM-dSq"/>
+                        <outlet property="productImage" destination="Hmm-Zi-PlT" id="KI2-ve-cL2"/>
+                        <outlet property="productPrice" destination="Awm-9w-O4F" id="467-1x-dEN"/>
+                        <outlet property="productTitle" destination="bHx-5c-9We" id="lWu-sh-lCm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
