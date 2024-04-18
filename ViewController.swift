@@ -11,8 +11,8 @@ import CoreData
 class ViewController: UIViewController {
     
     var persistentContainer: NSPersistentContainer? {
-            (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
-        }
+        (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,13 +57,36 @@ class ViewController: UIViewController {
             }
         }
     }
-        
-        @IBOutlet weak var productImage: UIImageView!
-        @IBOutlet weak var productTitle: UILabel!
-        @IBOutlet weak var productDescription: UILabel!
-        @IBOutlet weak var productPrice: UILabel!
-        
-        
-        
-}
     
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productTitle: UILabel!
+    @IBOutlet weak var productDescription: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    
+    private func addWishProduct() {
+        guard let context = self.persistentContainer?.viewContext else {return}
+        
+        guard let decodeProduct = self.decodeProduct else {return}
+        
+        let wishProduct = Product(context: context)
+        
+        wishProduct.id = Int64(decodeProduct.id)
+        wishProduct.title = decodeProduct.title
+        wishProduct.price = decodeProduct.price
+        
+        try? context.save()
+    }
+    
+    @IBAction func addWishList(_ sender: UIButton) {
+        self.addWishProduct()
+    }
+    
+    @IBAction func showOtherProduct(_ sender: Any) {
+        self.loadData()
+    }
+    
+    @IBAction func showWishList(_ sender: Any) {
+    }
+    
+}
+
