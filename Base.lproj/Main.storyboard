@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.8392156959" green="0.90196079019999997" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="77" id="mFO-2A-Jyy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="77" id="mFO-2A-Jyy" customClass="wishCell" customModule="MyWishList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mFO-2A-Jyy" id="Q3G-bb-eeg">
@@ -151,6 +151,11 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="PzE-Qw-ar9" secondAttribute="bottom" constant="5" id="pwZ-oV-epI"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="wishProductID" destination="iuD-9M-Is2" id="o4R-64-Qvw"/>
+                                    <outlet property="wishProductPrice" destination="Gqi-XM-yT5" id="L4z-Wu-LUG"/>
+                                    <outlet property="wishProductTitle" destination="vZt-s7-LPw" id="y9D-gk-gzB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
